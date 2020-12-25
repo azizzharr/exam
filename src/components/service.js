@@ -5,7 +5,6 @@ class Service {
 
     request = async (url = "/", data = {}, method = "GET") => {
         const token = get("token")
-        console.log(token,"token")
         const headers = {
             "Content-type": "application/json",
         }

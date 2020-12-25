@@ -1,30 +1,34 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { Card } from "react-bootstrap";
 import "./index.css"
 
 class ProductItem extends Component {
+
     render() {
         const { title, images, url, id } = this.props
-
         return (
-            <div className="col-lg-4 col-md-6 mb-4">
-                   <Link to={`product/${title.id}?url=` + url}>
-            <div className="card h-100">
-              <a href="#">
-                  <img className="card-img-top"   src={images[0].original} alt=""/>
-              </a>
-              <div className="card-body">
-                <h4 className="card-title">
-                <a href='#'>{title}</a>
-                </h4>
-               
-                <p className="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              
-          </div>
-          </Link>
-          </div>
+            <div className='col-lg-4 col-md-6 mb-4'>
+                <Link to={`product/${title.id}?url=` + url}>
+                    <Card className='h-100'>
+                        <Card.Img variant="top"
+                            src={images[1].original} />
+                        <Card.Body>
+                            <Card.Title>
+                                <a href='#'>{title}</a>
+                            </Card.Title>
+                            <h3>$24.99</h3>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                            </Card.Text>
+                        </Card.Body>
+                        <Card.Footer>
+                            <small className='text-muted'>★ ★ ★ ★ ☆</small>
+                        </Card.Footer>
+                    </Card>
+                </Link>
+            </div>
         );
     }
 }
